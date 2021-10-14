@@ -7,6 +7,8 @@
 3. read `/proc/stat` to get system boot time.
 4. add two times tother.
 
+> You can get process `starttime` by [libprocps](https://gitlab.com/procps-ng/procps)
+
 ## Commands
 
 ```bash
