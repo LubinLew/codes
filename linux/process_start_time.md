@@ -70,7 +70,7 @@ uint32_t getProcessStatTime(pid_t pid)
     snprintf(name, 63, "/proc/%d/stat", pid);
     fp = fopen(name, "r");
     if (NULL == fp) {
-        return -3;
+        return 0;
     }
     ret = fscanf(fp, "%d (%[^)]) %c %d %d %d %d %d " //(1)pid,(2)name,(3)state,(4)ppid,(5)pgrp,(6)session,(7)tty_nr,(8)tpgid
              "%lu %lu %lu %lu %lu %lu %lu %lu " //(9)flags,(10)minflt,(11)cminflt,(12)majflt,(13)cmajflt,(14)utime,(15)stime,(16)cutime
@@ -81,7 +81,7 @@ uint32_t getProcessStatTime(pid_t pid)
     fclose(fp);
 
     if (ret != 22) {
-        return -2;
+        return 0;
     }
 
     return convertStartTime(starttime);
