@@ -2,6 +2,13 @@
 
 convert unix timestamp to datetime, for example `1634180667` -> `2021-10-14 11:04:27`.
 
+## linux command
+
+```bash
+$ date -d @1634180667
+Thu Oct 14 03:04:27 UTC 2021
+```
+
 ## Key Functions
 
 ```c
